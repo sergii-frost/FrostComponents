@@ -1,25 +1,89 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13168.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Menlo.ttc">
+            <string>Menlo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="FrostComponents_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="jwo-Gt-o3t">
+                                <rect key="frame" x="16" y="60" width="343" height="184"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Dw-wx-yLs" customClass="FRActionButton" customModule="FrostComponents">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="6ft-mZ-hAp"/>
+                                        </constraints>
+                                        <state key="normal" title="Button #1"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K5K-k4-1hL" customClass="FRActionButton" customModule="FrostComponents">
+                                        <rect key="frame" x="0.0" y="48" width="343" height="40"/>
+                                        <state key="normal" title="Button #2"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQz-eF-57l" customClass="FRActionButton" customModule="FrostComponents">
+                                        <rect key="frame" x="0.0" y="96" width="343" height="40"/>
+                                        <state key="normal" title="Button #3"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgX-38-WHy" customClass="FRActionButton" customModule="FrostComponents">
+                                        <rect key="frame" x="0.0" y="144" width="343" height="40"/>
+                                        <state key="normal" title="Clear"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="K5K-k4-1hL" firstAttribute="height" secondItem="8Dw-wx-yLs" secondAttribute="height" id="HzL-PH-7V1"/>
+                                    <constraint firstItem="gQz-eF-57l" firstAttribute="height" secondItem="8Dw-wx-yLs" secondAttribute="height" id="LCf-Xk-iRo"/>
+                                    <constraint firstItem="EgX-38-WHy" firstAttribute="height" secondItem="8Dw-wx-yLs" secondAttribute="height" id="uNJ-ut-qQr"/>
+                                </constraints>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i63-0v-m0u">
+                                <rect key="frame" x="16" y="252" width="343" height="415"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="10"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="i63-0v-m0u" firstAttribute="trailing" secondItem="jwo-Gt-o3t" secondAttribute="trailing" id="DpK-xf-UQw"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="i63-0v-m0u" secondAttribute="bottom" id="JEZ-j6-T6A"/>
+                            <constraint firstItem="i63-0v-m0u" firstAttribute="leading" secondItem="jwo-Gt-o3t" secondAttribute="leading" id="JL8-07-QBe"/>
+                            <constraint firstItem="i63-0v-m0u" firstAttribute="top" secondItem="jwo-Gt-o3t" secondAttribute="bottom" constant="8" id="JjM-qU-G7g"/>
+                            <constraint firstItem="jwo-Gt-o3t" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="40" id="Vci-JW-bQ4"/>
+                            <constraint firstItem="jwo-Gt-o3t" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="YuM-kb-8J1"/>
+                            <constraint firstAttribute="trailing" secondItem="jwo-Gt-o3t" secondAttribute="trailing" constant="16" id="dZW-Jn-h9S"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button1" destination="8Dw-wx-yLs" id="jL0-jm-gnx"/>
+                        <outlet property="button2" destination="K5K-k4-1hL" id="DEc-IN-LlB"/>
+                        <outlet property="button3" destination="gQz-eF-57l" id="jKk-4p-AcN"/>
+                        <outlet property="clearButton" destination="EgX-38-WHy" id="kYx-Bf-d4M"/>
+                        <outlet property="debugTextView" destination="i63-0v-m0u" id="LSn-qn-MT3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="36.431784107946029"/>
         </scene>
     </scenes>
 </document>

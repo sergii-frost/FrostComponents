@@ -1,11 +1,6 @@
+platform :ios, '9.0'
 use_frameworks!
 
 target 'FrostComponents_Example' do
   pod 'FrostComponents', :path => '../'
-
-  target 'FrostComponents_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end

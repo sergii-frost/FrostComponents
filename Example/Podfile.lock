@@ -1,0 +1,16 @@
+PODS:
+  - FrostComponents (0.1.0)
+
+DEPENDENCIES:
+  - FrostComponents (from `../`)
+
+EXTERNAL SOURCES:
+  FrostComponents:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FrostComponents: a568caa0404de2235d495f2106f830a478d9a7a0
+
+PODFILE CHECKSUM: aa1d0f06f2bed017eff401024ad6d888f09b0cf9
+
+COCOAPODS: 1.2.1
