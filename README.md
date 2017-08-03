@@ -17,8 +17,12 @@ FrostComponents is available through [CocoaPods](http://cocoapods.org). To insta
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "FrostComponents"
+pod 'FrostComponents', :git => 'https://github.com/sergii-frost/FrostComponents.git', :tag => '0.1.0'
 ```
+
+## Usage
+
+[FRButton & FRButtonStyle & FRActionButton](https://github.com/sergii-frost/FrostComponents/wiki/FRButton-&-FRButtonStyle-&-FRActionButton)
 
 ## Author
 
