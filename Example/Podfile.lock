@@ -1,5 +1,9 @@
 PODS:
-  - FrostComponents (0.1.0)
+  - FrostComponents (0.1.1):
+    - FrostComponents/FRAlert (= 0.1.1)
+    - FrostComponents/FRButton (= 0.1.1)
+  - FrostComponents/FRAlert (0.1.1)
+  - FrostComponents/FRButton (0.1.1)
 
 DEPENDENCIES:
   - FrostComponents (from `../`)
@@ -9,7 +13,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  FrostComponents: a568caa0404de2235d495f2106f830a478d9a7a0
+  FrostComponents: dc3bdb9954819cce345554b7b2da97b048e23100
 
 PODFILE CHECKSUM: aa1d0f06f2bed017eff401024ad6d888f09b0cf9
 
