@@ -28,8 +28,6 @@ Current pod allows to share common UI components and Utils without need to copy 
 
   s.subspec 'FRButton' do |frbutton|
     frbutton.name         = 'FRButton'
-    frbutton.version      = '0.1.1'
-    frbutton.summary      = 'FRButton & FRButtonStyle & FRActionButton'
     frbutton.source_files = 'FrostComponents/Classes/FrostButton/*.swift', 'FrostComponents/Classes/Extras/*.swift'
   end
 end
