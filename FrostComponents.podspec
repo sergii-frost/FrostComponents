@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'FrostComponents'
-  s.version          = '0.1.1'
+  s.version          = '0.2.0'
   s.summary          = 'Shared UI Components to be used in multiple projects'
 
   s.description      = <<-DESC
