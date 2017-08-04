@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'FrostComponents'
-  s.version          = '0.1.1'
+  s.version          = '0.2.0'
   s.summary          = 'Shared UI Components to be used in multiple projects'
 
   s.description      = <<-DESC
@@ -18,9 +18,12 @@ Current pod allows to share common UI components and Utils without need to copy 
 
   s.source_files = 'FrostComponents/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'FrostComponents' => ['FrostComponents/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'FrostComponents' => [
+      'FrostComponents/Assets/*.png', 
+      'FrostComponents/Resources/**/*.xib'
+    ]
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Foundation'
@@ -29,5 +32,13 @@ Current pod allows to share common UI components and Utils without need to copy 
   s.subspec 'FRButton' do |frbutton|
     frbutton.name         = 'FRButton'
     frbutton.source_files = 'FrostComponents/Classes/FrostButton/*.swift', 'FrostComponents/Classes/Extras/*.swift'
+  end
+
+  s.subspec 'FRAlert' do |fralert|
+    fralert.name         = 'FRAlert'
+    fralert.source_files = 'FrostComponents/Classes/FrostAlert/*.swift', 'FrostComponents/Classes/FrostButton/*.swift', 'FrostComponents/Classes/Extras/*.swift'
+    fralert.resource_bundles = {
+      'FRAlert' => ['FrostComponents/Resources/FrostAlert/*.xib']
+    }    
   end
 end

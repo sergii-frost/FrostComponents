@@ -22,13 +22,6 @@ open class FRButton: UIButton {
         }
     }
     
-    @IBInspectable public var cornerRadius: CGFloat = 0.0 {
-        didSet {
-            layer.cornerRadius = cornerRadius
-            layer.masksToBounds = cornerRadius > 0
-        }
-    }
-    
     @IBInspectable public var disabledColor: UIColor? {
         didSet {
             setBackgroundImage(UIImage.image(fromColor: disabledColor), for: .disabled)

@@ -23,21 +23,46 @@ class ViewController: UIViewController {
     }
     
     private func setupButtons() {
+        setupButton1()
+        setupButton2()
+        setupButton3()
+        setupClearButton()
+    }
+    
+    //MARK: - FRActionButton Demo
+    
+    private func setupButton1() {
         button1.style = FRButtonStyles.frostBlue
         button1.touchDownAction = {button in self.log("\(button.currentTitle ?? "") touchDownAction")}
-        button1.touchUpAction = {button in self.log("\(button.currentTitle ?? "") touchUpAction")}
         button1.touchExitAction = {button in self.log("\(button.currentTitle ?? "") touchExitAction")}
-        
+        button1.touchUpAction = {button in
+            let buttonTitle = button.currentTitle ?? "Unknown button"
+            self.log("\(buttonTitle) touchUpAction")
+            self.showStyledAlertWithOneButton(title: "\(buttonTitle)", message: "\(buttonTitle) was tapped")
+        }
+    }
+    
+    private func setupButton2() {
         button2.style = FRButtonStyles.frostGreenNoBackground
         button2.touchDownAction = {button in self.log("\(button.currentTitle ?? "") touchDownAction")}
-        button2.touchUpAction = {button in self.log("\(button.currentTitle ?? "") touchUpAction")}
         button2.touchExitAction = {button in self.log("\(button.currentTitle ?? "") touchExitAction")}
-
+        button2.touchUpAction = {button in
+            self.log("\(button.currentTitle ?? "") touchUpAction")
+            self.showNonStyledAlertWithTwoButtons()
+        }
+    }
+    
+    private func setupButton3() {
         button3.style = FRButtonStyles.frostPurpleBlue
         button3.touchDownAction = {button in self.log("\(button.currentTitle ?? "") touchDownAction")}
-        button3.touchUpAction = {button in self.log("\(button.currentTitle ?? "") touchUpAction")}
         button3.touchExitAction = {button in self.log("\(button.currentTitle ?? "") touchExitAction")}
-
+        button3.touchUpAction = {button in
+            self.log("\(button.currentTitle ?? "") touchUpAction")
+            self.showAlertWithThreeStyledButtons()
+        }
+    }
+    
+    private func setupClearButton() {
         clearButton.style = FRButtonStyles.frostOrange
         clearButton.touchUpAction = {button in
             self.clearLog()
@@ -47,6 +72,60 @@ class ViewController: UIViewController {
             })
         }
     }
+    
+    //MARK: - FRAlert Demo
+    
+    private func showStyledAlertWithOneButton(title: String?, message: String?) {
+        let alertStyle = FRAlertViewStyle(
+            titleFont: nil,
+            messageFont: nil,
+            titleColor: UIColor.frostBlue(),
+            messageColor: UIColor.frostPurple())
+        
+        FRAlertViewHelper.show(in: self,
+                               style: alertStyle,
+                               title: title,
+                               message: message,
+                               actions:
+            FRAlertViewAction(title: "OK", style: FRButtonStyles.frostBlue, action: {alertButton in self.log("\(alertButton.currentTitle ?? "") was tapped")}))
+    }
+    
+    private func showNonStyledAlertWithTwoButtons() {
+        let alertButtonAction: FRButtonAction = {alertButton in self.log("\(alertButton.currentTitle ?? "") was tapped")}
+        FRAlertViewHelper.show(in: self,
+                               style: nil,
+                               title: "Like emojis?",
+                               message: "If there are only 2 buttons, they are placed next to each other. \n⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️",
+                               actions:
+            FRAlertViewAction(title: "⚔️", style: FRButtonStyles.frostGreenNoBackground, action: alertButtonAction),
+            FRAlertViewAction(title: "🛡", style: FRButtonStyles.frostPurpleBlue, action: alertButtonAction),
+                               shouldAddOverlay: false)
+    }
+    
+    private func showAlertWithThreeStyledButtons() {
+        let alertButtonAction: FRButtonAction = {alertButton in self.log("\(alertButton.currentTitle ?? "") was tapped")}
+        let alertStyle = FRAlertViewStyle(
+            titleFont: nil,
+            messageFont: nil,
+            titleColor: UIColor.frostBlue(),
+            messageColor: UIColor.frostPurple(),
+            cornerRadius: 20.0,
+            backgroundColor: UIColor.frostGreen()
+        )
+        
+        FRAlertViewHelper.show(in: self,
+                               style: alertStyle,
+                               title: "3 styled buttons",
+                               message: "Alert itself can by styled as well. \nEach button can have it's own style, its own action, any of them will dismiss alert",
+                               actions:
+            FRAlertViewAction(title: "Blue", style: FRButtonStyles.frostBlue, action: alertButtonAction),
+            FRAlertViewAction(title: "Purple / Blue", style: FRButtonStyles.frostPurpleBlue, action: alertButtonAction),
+            FRAlertViewAction(title: "Orange no corner radius", style: FRButtonStyles.frostOrange, action: alertButtonAction)
+            )
+    }
+    
+    
+    //MARK: - Util functions
     
     private func log(_ message: String) {
         debugTextView.text = "\(message)\n" + debugTextView.text
