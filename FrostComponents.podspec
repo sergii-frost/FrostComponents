@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'FrostComponents'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Shared UI Components to be used in multiple projects'
 
   s.description      = <<-DESC
@@ -27,6 +27,9 @@ Current pod allows to share common UI components and Utils without need to copy 
   # s.dependency 'AFNetworking', '~> 2.3'
 
   s.subspec 'FRButton' do |frbutton|
+    s.name             = 'FRButton'
+    s.version          = '0.1.1'
+    s.summary          = 'FRButton & FRButtonStyle & FRActionButton'
     frbutton.source_files = 'FrostComponents/Classes/FrostButton/*.swift', 'FrostComponents/Classes/Extras/*.swift'
   end
 end
