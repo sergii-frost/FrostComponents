@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-public class FRButton: UIButton {
+open class FRButton: UIButton {
     
     @IBInspectable public var borderWidth: CGFloat = 0.0 {
         didSet {

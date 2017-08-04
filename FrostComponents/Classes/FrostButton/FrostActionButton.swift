@@ -9,7 +9,7 @@ import UIKit
 
 public typealias FRButtonAction = (FRActionButton) -> Void
 
-public class FRActionButton: FRButton {
+open class FRActionButton: FRButton {
     public var touchDownAction: FRButtonAction?
     public var touchUpAction: FRButtonAction?
     public var touchExitAction: FRButtonAction?
