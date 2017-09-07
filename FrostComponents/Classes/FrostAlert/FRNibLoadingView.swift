@@ -9,6 +9,8 @@ import Foundation
 
 open class FRNibLoadingView: UIView {
     
+    fileprivate let kBundleName = "FRAlert"
+    
     @IBOutlet weak var view: UIView!
     
     override init(frame: CGRect) {
@@ -32,8 +34,12 @@ open class FRNibLoadingView: UIView {
         addSubview(view)
     }
     
+    func bundleName() -> String {
+        return kBundleName
+    }
+    
     private func loadViewFromNib() -> UIView {
-        let bundle = Bundle.frostBundle(forClass: type(of: self))
+        let bundle = Bundle.frostBundle(forClass: type(of: self), bundleName: bundleName())
         let nib = UINib(nibName: String(describing: type(of: self)), bundle: bundle)
         let nibView = nib.instantiate(withOwner: self, options: nil).first as! UIView
         
