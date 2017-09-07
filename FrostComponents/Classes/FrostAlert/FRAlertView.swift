@@ -102,7 +102,7 @@ open class FRAlertView: FRNibLoadingView {
         messageLabel?.font = safeStyle.messageFont
         titleLabel?.textColor = safeStyle.titleColor ?? UIColor.black
         messageLabel?.textColor = safeStyle.messageColor ?? UIColor.black
-        cornerRadius = safeStyle.cornerRadius
+        view.cornerRadius = safeStyle.cornerRadius
         contentView?.backgroundColor = safeStyle.backgroundColor
     }
     
