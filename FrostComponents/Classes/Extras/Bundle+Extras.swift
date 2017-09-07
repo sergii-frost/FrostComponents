@@ -9,9 +9,9 @@
 import Foundation
 
 extension Bundle {
-    static func frostBundle<T:AnyObject>(forClass clazz: T.Type) -> Bundle {
+    static func frostBundle<T:AnyObject>(forClass clazz: T.Type, bundleName: String) -> Bundle {
         let bundle = Bundle(for: clazz)
-        if let path = bundle.path(forResource: "FrostComponents", ofType: "bundle") {
+        if let path = bundle.path(forResource: bundleName, ofType: "bundle") {
             return Bundle(path: path)!
         }
         else {
