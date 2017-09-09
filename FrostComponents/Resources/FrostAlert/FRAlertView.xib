@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -33,27 +33,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN2-3p-RUM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN2-3p-RUM">
                                 <rect key="frame" x="20" y="54" width="240" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="HX5-98-MPd">
-                                <rect key="frame" x="20" y="89.5" width="240" height="2.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="-1" translatesAutoresizingMaskIntoConstraints="NO" id="HX5-98-MPd">
+                                <rect key="frame" x="-1" y="89.5" width="282" height="23.5"/>
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="HX5-98-MPd" secondAttribute="trailing" constant="20" id="0HO-Vj-YqA"/>
+                            <constraint firstAttribute="trailing" secondItem="HX5-98-MPd" secondAttribute="trailing" constant="-1" id="0HO-Vj-YqA"/>
                             <constraint firstItem="HN2-3p-RUM" firstAttribute="top" secondItem="OjK-VQ-2Sa" secondAttribute="bottom" constant="10" id="2R9-Ui-ZPh"/>
                             <constraint firstAttribute="trailing" secondItem="HN2-3p-RUM" secondAttribute="trailing" constant="20" id="AZx-3T-KE6"/>
                             <constraint firstAttribute="trailing" secondItem="OjK-VQ-2Sa" secondAttribute="trailing" constant="20" id="Fwp-Xi-zgD"/>
                             <constraint firstItem="HN2-3p-RUM" firstAttribute="leading" secondItem="FuS-H3-Zs3" secondAttribute="leading" constant="20" id="Pzk-Lv-SOf"/>
                             <constraint firstItem="OjK-VQ-2Sa" firstAttribute="top" secondItem="FuS-H3-Zs3" secondAttribute="top" constant="20" id="QFB-Xv-NO6"/>
                             <constraint firstItem="OjK-VQ-2Sa" firstAttribute="leading" secondItem="FuS-H3-Zs3" secondAttribute="leading" constant="20" id="WKd-99-ZTl"/>
-                            <constraint firstItem="HX5-98-MPd" firstAttribute="leading" secondItem="FuS-H3-Zs3" secondAttribute="leading" constant="20" id="gd4-gZ-vJP"/>
+                            <constraint firstItem="HX5-98-MPd" firstAttribute="leading" secondItem="FuS-H3-Zs3" secondAttribute="leading" constant="-1" id="gd4-gZ-vJP"/>
                             <constraint firstItem="HX5-98-MPd" firstAttribute="top" secondItem="HN2-3p-RUM" secondAttribute="bottom" constant="16" id="r8K-co-aoT"/>
-                            <constraint firstAttribute="bottom" secondItem="HX5-98-MPd" secondAttribute="bottom" constant="20" id="vUZ-oy-gt3"/>
+                            <constraint firstAttribute="bottom" secondItem="HX5-98-MPd" secondAttribute="bottom" constant="-1" id="vUZ-oy-gt3"/>
                         </constraints>
                     </view>
                     <blurEffect style="extraLight"/>
