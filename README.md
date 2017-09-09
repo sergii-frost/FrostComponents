@@ -33,6 +33,8 @@ To intstall only `FRAlert`:
 ```ruby
 pod 'FrostComponents/FRAlert', :git => 'https://github.com/sergii-frost/FrostComponents.git', :tag => '0.2.0'
 ```
+For usage of FRAlert please refer to [FRAlert wiki page](https://github.com/sergii-frost/FrostComponents/wiki/FRAlert)
+
 
 
 ## Author
