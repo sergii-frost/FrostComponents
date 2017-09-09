@@ -18,6 +18,7 @@ public struct FRAlertViewStyle {
     var titleColor: UIColor?
     var messageColor: UIColor?
     var cornerRadius: CGFloat
+    var separatorColor: UIColor
     var backgroundColor: UIColor?
 
     public init(titleFont: UIFont?,
@@ -25,6 +26,7 @@ public struct FRAlertViewStyle {
                 titleColor: UIColor?,
                 messageColor: UIColor?,
                 cornerRadius: CGFloat = FRAlertViewStyle.kCornerRadius,
+                separatorColor: UIColor = UIColor.lightGray,
                 backgroundColor: UIColor? = nil) {
 
         self.titleFont = titleFont ?? FRAlertViewStyle.kDefaultTitleFont
@@ -32,18 +34,21 @@ public struct FRAlertViewStyle {
         self.messageFont = messageFont ?? FRAlertViewStyle.kDefaultMessageFont
         self.messageColor = messageColor
         self.cornerRadius = cornerRadius
+        self.separatorColor = separatorColor
         self.backgroundColor = backgroundColor
     }
 }
 
 public struct FRAlertViewAction {
     var title: String
-    var style: FRButtonStyle
+    var titleColor: UIColor
+    var font: UIFont?
     var action: FRButtonAction?
     
-    public init(title: String, style: FRButtonStyle, action: FRButtonAction?) {
+    public init(title: String, titleColor: UIColor, titleFont: UIFont?, action: FRButtonAction?) {
         self.title = title
-        self.style = style
+        self.titleColor = titleColor
+        self.font = titleFont
         self.action = action
     }
 }
@@ -56,8 +61,10 @@ open class FRAlertView: FRNibLoadingView {
         titleColor: UIColor.black,
         messageColor: UIColor.black)
     
-    let kActionButtonHeight: CGFloat = 30.0
-    
+    let kActionButtonHeight: CGFloat = 40.0
+    let kSeparatorWidth: CGFloat = 0.5
+    var separatorColor: UIColor = UIColor.clear
+
     @IBOutlet var contentView: UIView?
     @IBOutlet weak var titleLabel: UILabel?
     @IBOutlet weak var messageLabel: UILabel?
@@ -104,22 +111,26 @@ open class FRAlertView: FRNibLoadingView {
         messageLabel?.textColor = safeStyle.messageColor ?? UIColor.black
         view.cornerRadius = safeStyle.cornerRadius
         contentView?.backgroundColor = safeStyle.backgroundColor
+        actionsStackView?.spacing = -kSeparatorWidth
+        separatorColor = safeStyle.separatorColor
     }
     
     public func add(action: FRAlertViewAction, dismissAction: FRButtonAction?) {
         guard let actionsStackView = actionsStackView else {
             return
         }
-        
+
         let actionButton = FRActionButton(frame: CGRect.zero)
         actionButton.touchUpAction = { button in
             action.action?(button)
             dismissAction?(button)
         }
-        
+
         actionsStackView.addArrangedSubview(actionButton)
-        actionButton.style = action.style
+        actionButton.style = FRButtonStyle(titleColor: action.titleColor, borderColor: separatorColor, borderWidth: kSeparatorWidth, cornerRadius: 0.0)
+        actionButton.titleLabel?.font = action.font
         actionButton.setTitle(action.title, for: .normal)
+
         let heightConstraint = NSLayoutConstraint(
             item: actionButton,
             attribute: .height,
@@ -128,7 +139,7 @@ open class FRAlertView: FRNibLoadingView {
             attribute: .height,
             multiplier: 1.0,
             constant: kActionButtonHeight)
-        
+
         actionButton.addConstraint(heightConstraint)
         
         actionsStackView.axis = actionsStackView.arrangedSubviews.count < 3 ? .horizontal : .vertical
