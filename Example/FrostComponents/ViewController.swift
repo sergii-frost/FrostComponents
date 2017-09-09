@@ -109,6 +109,7 @@ class ViewController: UIViewController {
             titleColor: UIColor.frostBlue(),
             messageColor: UIColor.frostPurple(),            
             cornerRadius: 20.0,
+            separatorColor: UIColor.frostOrange(),
             backgroundColor: UIColor.frostGreen()
         )
         
