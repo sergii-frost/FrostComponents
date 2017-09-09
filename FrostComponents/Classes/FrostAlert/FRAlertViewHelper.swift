@@ -22,6 +22,14 @@ public class FRAlertViewHelper {
                             title: String?,
                             message: String?,
                             actions: FRAlertViewAction...) {
+        show(in: viewController, style: style, title: title, message: message, actions: actions)
+    }
+    
+    public static func show(in viewController: UIViewController?,
+                            style: FRAlertViewStyle? = nil,
+                            title: String?,
+                            message: String?,
+                            actions: [FRAlertViewAction]) {
         guard let viewController = viewController else {
             return
         }
