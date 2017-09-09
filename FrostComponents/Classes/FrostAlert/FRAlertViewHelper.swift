@@ -21,16 +21,12 @@ public class FRAlertViewHelper {
                             style: FRAlertViewStyle? = nil,
                             title: String?,
                             message: String?,
-                            actions: FRAlertViewAction...,
-                            shouldAddOverlay: Bool = true) {
+                            actions: FRAlertViewAction...) {
         guard let viewController = viewController else {
             return
         }
         
-        var overlay: UIView?
-        if shouldAddOverlay {
-            overlay = addOverlay(to: viewController)
-        }
+        let overlay: UIView? = addOverlay(to: viewController)
         
         let alert = alertView(withStyle: style, title: title, message: message)
         add(alertView: alert, overlay: overlay, to: viewController)
