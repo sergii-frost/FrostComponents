@@ -87,7 +87,7 @@ class ViewController: UIViewController {
                                title: title,
                                message: message,
                                actions:
-            FRAlertViewAction(title: "OK", style: FRButtonStyles.frostBlue, action: {alertButton in self.log("\(alertButton.currentTitle ?? "") was tapped")}))
+            FRAlertViewAction(title: "OK", titleColor:UIColor.frostPurple(), titleFont:UIFont.boldSystemFont(ofSize: UIFont.buttonFontSize), action: {alertButton in self.log("\(alertButton.currentTitle ?? "") was tapped")}))
     }
     
     private func showNonStyledAlertWithTwoButtons() {
@@ -97,9 +97,8 @@ class ViewController: UIViewController {
                                title: "Like emojis?",
                                message: "If there are only 2 buttons, they are placed next to each other. \n⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️⚔️",
                                actions:
-            FRAlertViewAction(title: "⚔️", style: FRButtonStyles.frostGreenNoBackground, action: alertButtonAction),
-            FRAlertViewAction(title: "🛡", style: FRButtonStyles.frostPurpleBlue, action: alertButtonAction),
-                               shouldAddOverlay: false)
+            FRAlertViewAction(title: "⚔️", titleColor:UIColor.frostPurple(), titleFont:UIFont.boldSystemFont(ofSize: UIFont.buttonFontSize), action: alertButtonAction),
+            FRAlertViewAction(title: "🛡", titleColor:UIColor.frostPurple(), titleFont:UIFont.boldSystemFont(ofSize: UIFont.buttonFontSize), action: alertButtonAction))
     }
     
     private func showAlertWithThreeStyledButtons() {
@@ -108,7 +107,7 @@ class ViewController: UIViewController {
             titleFont: nil,
             messageFont: nil,
             titleColor: UIColor.frostBlue(),
-            messageColor: UIColor.frostPurple(),
+            messageColor: UIColor.frostPurple(),            
             cornerRadius: 20.0,
             backgroundColor: UIColor.frostGreen()
         )
@@ -118,9 +117,9 @@ class ViewController: UIViewController {
                                title: "3 styled buttons",
                                message: "Alert itself can by styled as well. \nEach button can have it's own style, its own action, any of them will dismiss alert",
                                actions:
-            FRAlertViewAction(title: "Blue", style: FRButtonStyles.frostBlue, action: alertButtonAction),
-            FRAlertViewAction(title: "Purple / Blue", style: FRButtonStyles.frostPurpleBlue, action: alertButtonAction),
-            FRAlertViewAction(title: "Orange no corner radius", style: FRButtonStyles.frostOrange, action: alertButtonAction)
+            FRAlertViewAction(title: "Button 1", titleColor:UIColor.frostPurple(), titleFont:UIFont.boldSystemFont(ofSize: UIFont.buttonFontSize), action: alertButtonAction),
+            FRAlertViewAction(title: "Button 2", titleColor:UIColor.frostOrange(), titleFont:UIFont.italicSystemFont(ofSize: UIFont.labelFontSize), action: alertButtonAction),
+            FRAlertViewAction(title: "Button 3", titleColor:UIColor.frostBlue(), titleFont:UIFont.systemFont(ofSize: UIFont.smallSystemFontSize), action: alertButtonAction)
             )
     }
     

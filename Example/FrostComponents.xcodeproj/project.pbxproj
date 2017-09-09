@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		09B5E8525CBFD8D89AEE4C9C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		1C7D98F6B07480A2CE84A999 /* FrostComponents.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FrostComponents.podspec; path = ../FrostComponents.podspec; sourceTree = "<group>"; };
+		1C7D98F6B07480A2CE84A999 /* FrostComponents.podspec */ = {isa = PBXFileReference; fileEncoding = 1; includeInIndex = 1; lastKnownFileType = text; name = FrostComponents.podspec; path = ../FrostComponents.podspec; sourceTree = "<group>"; };
 		4588D6BC1F33508800EF9847 /* FRButtonStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRButtonStyles.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* FrostComponents_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FrostComponents_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
