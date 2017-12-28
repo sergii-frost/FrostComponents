@@ -11,7 +11,7 @@ public struct FRAlertViewStyle {
 
     static let kDefaultTitleFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
     static let kDefaultMessageFont = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)
-    static let kCornerRadius: CGFloat = 12.0
+    public static let kCornerRadius: CGFloat = 12.0
     
     var titleFont: UIFont
     var messageFont: UIFont
