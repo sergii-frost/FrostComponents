@@ -31,15 +31,15 @@ open class FRActionButton: FRButton {
     }
     
     //actions
-    func touchDown(sender: FRActionButton) {
+    @objc func touchDown(sender: FRActionButton) {
         touchDownAction?(sender)
     }
     
-    func touchExit(sender: FRActionButton) {
+    @objc func touchExit(sender: FRActionButton) {
         touchExitAction?(sender)
     }
     
-    func touchUp(sender: FRActionButton) {
+    @objc func touchUp(sender: FRActionButton) {
         touchUpAction?(sender)
     }
 }
